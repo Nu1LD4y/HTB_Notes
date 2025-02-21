@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cheat sheet/File transfer.md",
-                "mode": "preview",
+                "file": "cheat sheet/handy stuff.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "File transfer"
+              "title": "handy stuff"
             }
           }
         ],
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cheat sheet/File transfer.md",
+                "file": "cheat sheet/handy stuff.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for File transfer"
+              "title": "Backlinks for handy stuff"
             }
           },
           {
@@ -143,12 +143,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cheat sheet/File transfer.md",
+                "file": "cheat sheet/handy stuff.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from File transfer"
+              "title": "Outgoing links from handy stuff"
             }
           },
           {
@@ -172,16 +172,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cheat sheet/File transfer.md",
+                "file": "cheat sheet/handy stuff.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of File transfer"
+              "title": "Outline of handy stuff"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -202,7 +203,12 @@
   "lastOpenFiles": [
     "Labs/linux machines/titanic (easy).md",
     "Labs/linux machines/Machine list.md",
+    "cheat sheet/handy stuff.md",
     "cheat sheet/File transfer.md",
+    "cheat sheet/HTB cs 12ec6710968a801d9156e1809cd841fe.md",
+    "AD knowledge",
+    "AD",
+    "New folder",
     "Labs/windows machines/Bation.md",
     "Labs/windows machines/Machine list.md",
     "README.md",
