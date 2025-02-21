@@ -1,20 +1,24 @@
 {
   "main": {
-    "id": "a4fe350291d00ad5",
+    "id": "4543daf8df59a22c",
     "type": "split",
     "children": [
       {
-        "id": "a6bdef1361170b7b",
+        "id": "55e2cd16c940b648",
         "type": "tabs",
         "children": [
           {
-            "id": "187621c61b00cb33",
+            "id": "5f2dee68eabfffab",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Labs/linux machines/titanic (easy).md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "titanic (easy)"
             }
           }
         ]
@@ -23,28 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "8edcc48b38c9a7d9",
+    "id": "a242fb01cb3c9a82",
     "type": "split",
     "children": [
       {
-        "id": "532fc3f9d094d89e",
+        "id": "234149e77ce23ba7",
         "type": "tabs",
         "children": [
           {
-            "id": "6887b036fd08c021",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "Files"
-            }
-          },
-          {
-            "id": "e8bec0d1afa3e0a5",
+            "id": "7d11a6b498a41066",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +52,7 @@
             }
           },
           {
-            "id": "ad171c53f0f7acff",
+            "id": "65602e5809bc6691",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -69,27 +60,42 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
+          },
+          {
+            "id": "030bea49c5c70917",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
     "width": 300
   },
   "right": {
-    "id": "d1828e2963dd7aaa",
+    "id": "4e4326f4d68c5ad9",
     "type": "split",
     "children": [
       {
-        "id": "3afa14baf241e74e",
+        "id": "958631cc900b90a5",
         "type": "tabs",
         "children": [
           {
-            "id": "d3881cf4bca7ae3d",
+            "id": "ec7859398df3467b",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Labs/linux machines/titanic (easy).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,24 +105,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for titanic (easy)"
             }
           },
           {
-            "id": "4e3f2a38ee48b217",
+            "id": "0843286e8f1d219e",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Labs/linux machines/titanic (easy).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from titanic (easy)"
             }
           },
           {
-            "id": "93b9b1310e48714a",
+            "id": "69fc142aa8068932",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,17 +138,18 @@
             }
           },
           {
-            "id": "8a40d09f8ed9bb74",
+            "id": "cbc8a3b5f0470fd0",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "Labs/linux machines/titanic (easy).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of titanic (easy)"
             }
           }
         ]
@@ -158,9 +166,12 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-importer:Open Importer": false
     }
   },
-  "active": "187621c61b00cb33",
-  "lastOpenFiles": []
+  "active": "030bea49c5c70917",
+  "lastOpenFiles": [
+    "README.md"
+  ]
 }
