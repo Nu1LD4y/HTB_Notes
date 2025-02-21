@@ -1,0 +1,216 @@
+{
+  "main": {
+    "id": "5cfca7d0f8b3658e",
+    "type": "split",
+    "children": [
+      {
+        "id": "40eab8d88c500b93",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "75bb77740a186ff5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "linux machines/titanic (easy).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "titanic (easy)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "912c574346ea2463",
+    "type": "split",
+    "children": [
+      {
+        "id": "284bb30fc5ecb138",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6a797520f8c31f46",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "62fa90eed19af6dd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "c7fe4effe25547d1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 340.5
+  },
+  "right": {
+    "id": "0cee900a1c61f701",
+    "type": "split",
+    "children": [
+      {
+        "id": "7f98693517efb89c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "08b978bef457e5ed",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Lateral Movement 12dc6710968a80ce97c2d59850a0ddf6.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Lateral Movement 12dc6710968a80ce97c2d59850a0ddf6"
+            }
+          },
+          {
+            "id": "06d15030882223eb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "create a link.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from create a link"
+            }
+          },
+          {
+            "id": "3666806a6e6c8b2e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "22fc898af5206c22",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "linux machines/titanic (easy).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of titanic (easy)"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-importer:Open Importer": false
+    }
+  },
+  "active": "75bb77740a186ff5",
+  "lastOpenFiles": [
+    "HTB linux machines/titanic (easy).md",
+    "Defender tools 121c6710968a80a4b033d42175f6fbbb.md",
+    "HTB linux machines",
+    "Lateral Movement 12dc6710968a80ce97c2d59850a0ddf6.md",
+    "Kerberos attacks 14fc6710968a80b99865e401a56ff9a9.md",
+    "Crackmapexec 146c6710968a80e096a4cae685dcfa5b.md",
+    "RFC4556.md",
+    "Welcome.md",
+    "with Initial Foothold 119c6710968a81a7a7f7e493300ea10b.md",
+    "Pasted image 20250221150646.png",
+    "image 22.png",
+    "image 21.png",
+    "image 20.png",
+    "image 19.png",
+    "image 18.png",
+    "image 17.png",
+    "image 16.png",
+    "image 15.png",
+    "image 14.png",
+    "Hacking Active Directory 119c6710968a815c94dceccf0ab5ed65.md",
+    "Active Directory Enumeration & Attacks 11fc6710968a80c88e98c52d769303ab.md",
+    "OSCP 119c6710968a80baa00fd7115f622896.md",
+    "LDAP 121c6710968a80a5a6bcdcda5d4e146c.md",
+    "Gaining Access 119c6710968a81e6bc17db1f9058f544.md",
+    "create a link.md",
+    "Blood Hound 119c6710968a811ab136f40bf2172273.md",
+    "ADCS attacks 166c6710968a804183e6c59a3739f0e8.md",
+    "Vulns to RCE 177c6710968a802a9761ce48d1382135.md",
+    "Trust Attack 182c6710968a80b0a5d8d598347cf278.md",
+    "Tools 119c6710968a81d2a2e5ed984829de7b.md",
+    "System Center Configuration Manager(SCCM) 18ac6710968a8047a9e5e9791e73b865.md",
+    "Post 12dc6710968a8093bff5e68d3d07942d.md",
+    "OSCP boxes 119c6710968a81f7bf9dda66c5050dd6.md",
+    "NTLM RELAY ATTACKS 163c6710968a80c399ade9669e991107.md",
+    "MSSQL, Exchange, and SCCM Attacks 18ac6710968a803ab270fc31a64d8f25.md",
+    "Mimikatz 13cc6710968a803f8654cb127dc4f763.md",
+    "HTB cheat sheet 11fc6710968a8063aa2bf23bb2a171d6.md",
+    "385ecb1e-c73e-4d98-b3e9-28632193149c_Export-4d08e274-0a23-4c69-91cc-f6750a06b3fa",
+    "385ecb1e-c73e-4d98-b3e9-28632193149c_Export-4d08e274-0a23-4c69-91cc-f6750a06b3fa.zip",
+    "Untitled 1",
+    "Untitled.canvas"
+  ]
+}
