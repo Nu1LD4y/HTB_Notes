@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Labs/linux machines/titanic (easy).md",
+                "file": "cheat sheet/File transfer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "titanic (easy)"
+              "title": "File transfer"
             }
           }
         ]
@@ -95,17 +95,17 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Labs/linux machines/titanic (easy).md",
-                "collapseAll": false,
+                "file": "cheat sheet/File transfer.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for titanic (easy)"
+              "title": "Backlinks for File transfer"
             }
           },
           {
@@ -143,21 +143,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Labs/linux machines/titanic (easy).md",
+                "file": "cheat sheet/File transfer.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of titanic (easy)"
+              "title": "Outline of File transfer"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -170,8 +170,12 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "030bea49c5c70917",
+  "active": "5f2dee68eabfffab",
   "lastOpenFiles": [
+    "Labs/linux machines/titanic (easy).md",
+    "cheat sheet/File transfer.md",
+    "cheat sheet/Untitled.md",
+    "Untitled",
     "README.md"
   ]
 }
