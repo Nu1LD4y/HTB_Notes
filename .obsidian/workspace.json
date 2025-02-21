@@ -13,15 +13,44 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Labs/linux machines/titanic (easy).md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "titanic (easy)"
+            }
+          },
+          {
+            "id": "df400912b6dc8c0a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Labs/windows machines/Bation.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Bation"
+            }
+          },
+          {
+            "id": "24bb0d997aef9c37",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "cheat sheet/File transfer.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "File transfer"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -114,12 +143,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Labs/linux machines/titanic (easy).md",
+                "file": "cheat sheet/File transfer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from titanic (easy)"
+              "title": "Outgoing links from File transfer"
             }
           },
           {
@@ -129,7 +158,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true,
+                "useHierarchy": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -152,8 +181,7 @@
               "title": "Outline of File transfer"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -170,12 +198,15 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "5f2dee68eabfffab",
+  "active": "24bb0d997aef9c37",
   "lastOpenFiles": [
     "Labs/linux machines/titanic (easy).md",
+    "Labs/linux machines/Machine list.md",
     "cheat sheet/File transfer.md",
+    "Labs/windows machines/Bation.md",
+    "Labs/windows machines/Machine list.md",
+    "README.md",
     "cheat sheet/Untitled.md",
-    "Untitled",
-    "README.md"
+    "Untitled"
   ]
 }
