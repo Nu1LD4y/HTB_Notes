@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cheat sheet/handy stuff.md",
+                "file": "Labs/OSCP boxes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "handy stuff"
+              "title": "OSCP boxes"
             }
           }
         ],
@@ -172,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cheat sheet/handy stuff.md",
+                "file": "Labs/OSCP boxes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of handy stuff"
+              "title": "Outline of OSCP boxes"
             }
           }
         ],
@@ -201,15 +201,16 @@
   },
   "active": "24bb0d997aef9c37",
   "lastOpenFiles": [
+    "Labs/windows machines/Bation.md",
+    "Labs/OSCP boxes.md",
+    "cheat sheet/handy stuff.md",
     "Labs/linux machines/titanic (easy).md",
     "Labs/linux machines/Machine list.md",
-    "cheat sheet/handy stuff.md",
     "cheat sheet/File transfer.md",
     "cheat sheet/HTB cs 12ec6710968a801d9156e1809cd841fe.md",
     "AD knowledge",
     "AD",
     "New folder",
-    "Labs/windows machines/Bation.md",
     "Labs/windows machines/Machine list.md",
     "README.md",
     "cheat sheet/Untitled.md",
