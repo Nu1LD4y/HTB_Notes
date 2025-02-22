@@ -152,3 +152,13 @@ New-NetFirewallRule -Name "thisistest" -Protocol TCP -LocalPort Any -Action Allo
  Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config" -Name "AnnounceFlags" -Value 5
  Restart-Service w32time
 ```
+
+# python install with venv
+
+```bash
+$ git clone -q https://github.com/garrettfoster13/sccmhunter
+$ cd sccmhunter 
+$ python3 -m venv .sccmhunter 
+$ source .sccmhunter/bin/activate
+$ python3 -m pip install -r requirements.txt
+```
