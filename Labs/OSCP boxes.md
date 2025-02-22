@@ -1,5 +1,5 @@
-# OSCP Boxes Checklist
-
+- [[Windows Machine list|windows Machine list]]
+- [[Linux Machine list|Linux Machine list]]
 ## Easy
 
 - [x]  Active (windows): This is a box about group.xml and kerberoast
