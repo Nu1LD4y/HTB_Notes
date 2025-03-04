@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Labs/linux machines/Checker (Hard).md",
+                "file": "Labs/linux machines/Cypher (Medium).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Checker (Hard)"
+              "title": "Cypher (Medium)"
             }
           }
         ]
@@ -79,7 +79,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "4e4326f4d68c5ad9",
@@ -143,13 +144,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Labs/linux machines/Checker (Hard).md",
+                "file": "Labs/linux machines/Cypher (Medium).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Checker (Hard)"
+              "title": "Outline of Cypher (Medium)"
             }
           }
         ],
@@ -161,19 +162,25 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-importer:Open Importer": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-importer:Open Importer": false
+      "command-palette:Open command palette": false
     }
   },
   "active": "5f2dee68eabfffab",
   "lastOpenFiles": [
-    "tmp.md",
+    "Pasted image 20250304192818.png",
+    "images/Pasted image 20250304160710.png",
+    "Labs/linux machines/Cypher (Medium).md",
+    "images",
+    "New folder",
+    "Pasted image 20250304160710.png",
     "Labs/linux machines/Checker (Hard).md",
+    "tmp.md",
     "Labs/OSCP boxes.md",
     "cheat sheet/handy stuff.md",
     "Untitled",
@@ -186,7 +193,6 @@
     "cheat sheet/HTB cs 12ec6710968a801d9156e1809cd841fe.md",
     "AD knowledge",
     "AD",
-    "New folder",
     "README.md",
     "cheat sheet/Untitled.md"
   ]

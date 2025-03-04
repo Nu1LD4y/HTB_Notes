@@ -3,5 +3,6 @@
   "cssTheme": "",
   "textFontFamily": "Consolas",
   "monospaceFontFamily": "Inter",
-  "interfaceFontFamily": "Inter"
+  "interfaceFontFamily": "Inter",
+  "baseFontSize": 20
 }
