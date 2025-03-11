@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Labs/linux machines/Cypher (Medium).md",
+                "file": "Labs/linux machines/Dog (Easy).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cypher (Medium)"
+              "title": "Dog (Easy)"
             }
           }
         ]
@@ -144,13 +144,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Labs/linux machines/Cypher (Medium).md",
+                "file": "Labs/linux machines/Dog (Easy).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Cypher (Medium)"
+              "title": "Outline of Dog (Easy)"
             }
           }
         ],
@@ -173,10 +173,15 @@
   },
   "active": "5f2dee68eabfffab",
   "lastOpenFiles": [
+    "Pasted image 20250311145605.png",
+    "images/Pasted image 20250311144734.png",
+    "Labs/linux machines/Dog (Easy).md",
+    "images/Pasted image 20250311144552.png",
+    "Labs/linux machines/Cypher (Medium).md",
+    "Labs/linux machines/titanic (easy).md",
     "images/Pasted image 20250304192818.png",
     "Pasted image 20250304192818.png",
     "images/Pasted image 20250304160710.png",
-    "Labs/linux machines/Cypher (Medium).md",
     "images",
     "New folder",
     "Pasted image 20250304160710.png",
@@ -187,7 +192,6 @@
     "Untitled",
     "Labs/linux machines/Linux Machine list.md",
     "Labs/windows machines/Windows Machine list.md",
-    "Labs/linux machines/titanic (easy).md",
     "Labs/linux machines/cat (medium).md",
     "Labs/windows machines/Bation.md",
     "cheat sheet/File transfer.md",
