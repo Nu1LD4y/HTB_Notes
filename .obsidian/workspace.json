@@ -79,8 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "4e4326f4d68c5ad9",
@@ -171,9 +170,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5f2dee68eabfffab",
+  "active": "030bea49c5c70917",
   "lastOpenFiles": [
-    "Pasted image 20250311145605.png",
+    "images/Pasted image 20250311145605.png",
     "images/Pasted image 20250311144734.png",
     "Labs/linux machines/Dog (Easy).md",
     "images/Pasted image 20250311144552.png",
