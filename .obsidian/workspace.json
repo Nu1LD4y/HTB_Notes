@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Labs/linux machines/Dog (Easy).md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dog (Easy)"
+              "title": "README"
             }
           }
         ]
@@ -143,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Labs/linux machines/Dog (Easy).md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Dog (Easy)"
+              "title": "Outline of README"
             }
           }
         ],
@@ -170,11 +170,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "030bea49c5c70917",
+  "active": "5f2dee68eabfffab",
   "lastOpenFiles": [
+    "Labs/linux machines/Dog (Easy).md",
     "images/Pasted image 20250311145605.png",
     "images/Pasted image 20250311144734.png",
-    "Labs/linux machines/Dog (Easy).md",
     "images/Pasted image 20250311144552.png",
     "Labs/linux machines/Cypher (Medium).md",
     "Labs/linux machines/titanic (easy).md",
