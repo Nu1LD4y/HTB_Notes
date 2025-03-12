@@ -162,3 +162,8 @@ $ python3 -m venv .sccmhunter
 $ source .sccmhunter/bin/activate
 $ python3 -m pip install -r requirements.txt
 ```
+
+# MUMU OSCP script
+```bash
+IP=${PWD##*/} sudo nmap -Pn -vv -T5 -P -sS -oA Pn_vv_T5_P_sS $IP.offsec.wp sudo nmap -Pn -vv -T5 -p- -sS -oA Pn_vv_T5_p_sS $IP.offsec.wp sudo nmap -Pn -vv -T5 -p$(cat ./Pn_vv_T5_p_sS.nmap|grep -oP '\d*/tcp'|tr -d "/tcp"|tr "\n" ",") -sS -A -oA Pn_vv_P_sS_A $IP.offsec.wp sudo nmap -Pn -vv -T5 -P -sU -oA Pn_vv_T5_P_sU $IP.offsec.wp sudo nmap -Pn -vv -T5 -p$(cat ./Pn_vv_T5_p_sS.nmap|grep -oP '\d*/tcp'|tr -d "/tcp"|tr "\n" ",") -sS -sV -oA Pn_vv_T5_P_sS_sV $IP.offsec.wp
+```

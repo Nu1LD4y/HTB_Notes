@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Labs/windows machines/Certified (Medium).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Certified (Medium)"
             }
           }
         ]
@@ -143,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "Labs/windows machines/Certified (Medium).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of Certified (Medium)"
             }
           }
         ],
@@ -172,6 +172,13 @@
   },
   "active": "5f2dee68eabfffab",
   "lastOpenFiles": [
+    "Labs/windows machines/Bation.md",
+    "Labs/windows machines/Certified (Medium).md",
+    "images/Pasted image 20250312212724.png",
+    "cheat sheet/handy stuff.md",
+    "Labs/OSCP boxes.md",
+    "Labs/linux machines/LinkVortex (easy).md",
+    "README.md",
     "Labs/linux machines/Dog (Easy).md",
     "images/Pasted image 20250311145605.png",
     "images/Pasted image 20250311144734.png",
@@ -186,18 +193,14 @@
     "Pasted image 20250304160710.png",
     "Labs/linux machines/Checker (Hard).md",
     "tmp.md",
-    "Labs/OSCP boxes.md",
-    "cheat sheet/handy stuff.md",
     "Untitled",
     "Labs/linux machines/Linux Machine list.md",
     "Labs/windows machines/Windows Machine list.md",
     "Labs/linux machines/cat (medium).md",
-    "Labs/windows machines/Bation.md",
     "cheat sheet/File transfer.md",
     "cheat sheet/HTB cs 12ec6710968a801d9156e1809cd841fe.md",
     "AD knowledge",
     "AD",
-    "README.md",
     "cheat sheet/Untitled.md"
   ]
 }
