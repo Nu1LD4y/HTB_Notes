@@ -1,3 +1,3 @@
-[[titanic (easy)]]
-[[cat (medium)]]
+[[Titanic (Easy)]]
+[[Cat (Medium)]]
 
