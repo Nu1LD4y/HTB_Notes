@@ -1,6 +1,9 @@
 # User flag
 ## 1. rustscan
-```
+```python
+┌──(kali㉿kali)-[~/Desktop]
+└─$ rustscan -a 10.129.112.91 -- -sC -sV -oN "Linkvortex"
+
 # Nmap 7.94SVN scan initiated Wed Mar 12 07:36:31 2025 as: /usr/lib/nmap/nmap --privileged -vvv -p 22,80 -sC -sV -oN LinkVortex 10.129.164.202
 Nmap scan report for 10.129.164.202
 Host is up, received reset ttl 63 (0.22s latency).
