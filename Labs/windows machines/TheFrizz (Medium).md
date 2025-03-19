@@ -429,7 +429,7 @@ Global Group memberships     *Domain Users         *Desktop Admins
 The command completed successfully.
 ```
 
-# 12. UAC bypass
+## 12. UAC bypass
 
 ```python
 # open a new reverse session and find out we are in Medium Mandatory Level
